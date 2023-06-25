@@ -3,7 +3,7 @@ import { tasks } from "../entity/Task";
 import { ObjectId } from "mongodb";
 
 export class SaveTask {
-    public async saveTask(obj: tasks) {
+    public async saveTask(obj: tasks , user) {
         let result;
         const tasks = await getManager().collection('tasks');
         if (obj._id) {
@@ -14,8 +14,9 @@ export class SaveTask {
                 $set: {...updateObj}
             });
         } else {
+            obj['userId'] = user.userId;
             result = await tasks.insertOne(obj);
         }
-        return result;
+        return result ? "Record Added" : null;
     }
 } 

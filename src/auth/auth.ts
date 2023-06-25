@@ -10,6 +10,7 @@ export const authMiddleware = (req, res, next) => {
     }
     const isTokenValid = new UserRegistrationBLL().validateToken(UserDetails,token);
     if (isTokenValid) {
+        req['user'] = UserDetails;
         next();
     } else {
         res.status(401).send ('You are not Authorized');
