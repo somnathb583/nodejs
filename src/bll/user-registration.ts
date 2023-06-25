@@ -52,7 +52,7 @@ export class UserRegistrationBLL {
                         }
                     })
                 }
-                UserRegistrationBLL.cache.set(oldUser.email,token, 60);
+                UserRegistrationBLL.cache.set(oldUser.email,token, 60 * 5);
             } 
             return token;
         } else if(!oldUser) {
@@ -80,7 +80,7 @@ export class UserRegistrationBLL {
             },
             user.email,
             {
-                expiresIn: "60000"
+                expiresIn: "300000"
             }
         );
     }
