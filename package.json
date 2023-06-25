@@ -15,7 +15,7 @@
       "express": "^4.18.2",
       "express-auto-routes": "^2.2.0",
       "jsonwebtoken": "^9.0.0",
-      "mongodb": "^5.2.0",
+      "mongodb": "3.7.4",
       "nodemon": "^2.0.22",
       "reflect-metadata": "^0.1.13",
       "typeorm": "0.3.16"
