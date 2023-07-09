@@ -10,6 +10,8 @@ app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
     console.log("it is executed");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Headers", "access-control-allow-origin");
+    console.log("it is executed also");
     next();
 });
 app.use(authMiddleware);
