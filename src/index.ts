@@ -9,7 +9,7 @@ const app = express();
 app.use(authMiddleware);
 app.use(bodyParser.json());
 app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'https://somnathb583-fuzzy-space-computing-6567xj4g4p7hrpr5-5500.preview.app.github.dev');
+    res.setHeader('Access-Control-Allow-Origin', '*');
     next();
 });
 
