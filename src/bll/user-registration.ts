@@ -54,7 +54,7 @@ export class UserRegistrationBLL {
                 }
                 UserRegistrationBLL.cache.set(oldUser.email,token, 60 * 5);
             } 
-            return token;
+            return Object.assign({},oldUser,{Authtoken: token});
         } else if(!oldUser) {
             return "You are not register, Please Sign Up ➡️➡️";
         } else {
